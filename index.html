@@ -2,43 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./app.js" defer></script>
-    <title>Document</title>
+    <title>Becky Nguyễn</title>
 </head>
 <body>
-    <div class="loading">
-        <div class="boxHeartImg">
-            <div class="heartItem item1">
-                <img src="./image/heart.png" alt="">
-            </div>
-            <div class="heartItem item2">
-                <img src="./image/heart.png" alt="">
-            </div>
-            <div class="heartItem item3">
-                <img src="./image/heart.png" alt="">
-            </div>
+    <section>
+        <div class="box">
+            <div class="items"></div>
         </div>
-        <div class="heartBox">
-            <div class="heart"></div>
-        </div>
-        <div class="progress-bar">
-            <div class="progress"></div>
-            <div class="percent">100%</div>
-        </div>
-        <h2 class="textBox">
-            <span class="textLoad">Loading apology</span>
-            <span class="cricle1">.</span>
-            <span class="cricle2">.</span>
-            <span class="cricle3">.</span>
-        </h2>
-        <div class="buttonCLick">
-            <img src="./image/cursor.png" alt="">
-            <div class="button">
-                <p class="textBtn"></p>
-            </div>
-        </div>
-    </div>
+    </section>
 </body>
+<script>
+    let sectionSpan = document.querySelector("section");
+    for (let i = 0; i < 630; i++) {
+        let span = document.createElement("span");
+        sectionSpan.appendChild(span)        
+    }
+    var span = document.querySelectorAll("span");
+    span.forEach(function(item){
+        item.addEventListener("click", ()=>{
+            item.classList.toggle("active")
+        })
+    })
+    let items = document.querySelector(".items")
+    for (let j = 0; j < 63; j++) {
+        let div = document.createElement("div")
+        div.classList.add("item")
+        items.appendChild(div)
+    }
+</script>
 </html>
